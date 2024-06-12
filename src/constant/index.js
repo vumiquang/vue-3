@@ -11,3 +11,17 @@ export const logoImage = {
   img10:
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0k_KnGE71BCOy25YXpAbXYdXHIMpQIu3TXA&s'
 }
+
+export const imageBg = {
+  img1: 'https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2ZsMjM0MTcwNjg4MTItaW1hZ2Uta3FhcDlyZHcuanBn.jpg',
+  img2: 'https://wallpapers.com/images/hd/a-dirty-road-through-the-woods-5g9uok97c3o8slm4.jpg',
+  img3: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZkXSfX22ga3hocd-GTTBalDcMIKyga9f0LM8jmlO_dcZpIqPMcxYBQ9RwE8CuqAJXvmw&usqp=CAU',
+  img4: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT35HYtO9g1X0jQdyepdra2CWR53XuQVFcZDw&s',
+  img5: 'https://cdn.pixabay.com/photo/2020/04/10/11/54/nature-5025462_960_720.jpg',
+  img6: 'https://cdn.pixabay.com/photo/2019/10/02/10/27/nature-4520606_1280.jpg',
+  img7: 'https://cdn.pixabay.com/photo/2020/04/10/11/54/nature-5025462_1280.jpg',
+  img8: 'https://as2.ftcdn.net/v2/jpg/05/47/97/81/1000_F_547978128_vqEEUYBr1vcAwfRAqReZXTYtyawpgLcC.jpg',
+  img9: 'https://www.euroschoolindia.com/wp-content/uploads/2023/07/nature-conservation.jpg',
+  img10:
+    'https://wallpapers.com/images/hd/1920x1080-full-hd-nature-orange-leaves-trees-6ofvqznpxapszq3h.jpg'
+}

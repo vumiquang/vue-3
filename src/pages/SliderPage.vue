@@ -1,7 +1,10 @@
 <script setup>
 import SectionComponent from '@/components/section/SectionComponent.vue'
 import SliderAuto from '@/components/slider/SliderAuto.vue'
-import { logoImage } from '@/constant'
+import SliderAuto2 from '@/components/slider/SliderAuto2.vue'
+import CarouselInfinity from '@/components/slider/CarouselInfinity.vue'
+
+import { logoImage, imageBg } from '@/constant'
 import { reactive } from 'vue'
 
 const dataSrcImage = reactive([
@@ -36,12 +39,49 @@ const dataSrcImage = reactive([
     src: logoImage.img10
   }
 ])
+
+const dataSrcImageBG = reactive([
+  {
+    src: imageBg.img1
+  },
+  {
+    src: imageBg.img2
+  },
+  {
+    src: imageBg.img3
+  },
+  {
+    src: imageBg.img4
+  },
+  {
+    src: imageBg.img5
+  }
+  // {
+  //   src: imageBg.img6
+  // },
+  // {
+  //   src: imageBg.img7
+  // },
+  // {
+  //   src: imageBg.img8
+  // },
+  // {
+  //   src: imageBg.img9
+  // },
+  // {
+  //   src: imageBg.img10
+  // }
+])
 </script>
 
 <template>
   <div class="container">
-    <SectionComponent title="Auto slider">
+    <!-- <SectionComponent title="Auto slider">
       <SliderAuto :dataSrc="dataSrcImage" />
+      <SliderAuto2 :dataSrc="dataSrcImage" class="mt-24" />
+    </SectionComponent> -->
+    <SectionComponent title="Carousel infinity" class="mt-24">
+      <CarouselInfinity :dataSrc="dataSrcImageBG" />
     </SectionComponent>
   </div>
 </template>

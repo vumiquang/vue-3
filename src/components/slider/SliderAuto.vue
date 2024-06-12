@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
+import { computed } from 'vue'
 
 const props = defineProps({
   dataSrc: {
@@ -39,14 +39,13 @@ const timePerItem = computed(() => {
 .slider {
   width: 100%;
   height: 40px;
-  border: 1px solid red;
   position: relative;
   overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
   &:hover .slider-item {
     animation-play-state: paused !important;
   }
   .slider-item {
-    border: 1px solid green;
     position: absolute;
     top: 0;
     left: max(calc(20% * var(--count)), 100%);
