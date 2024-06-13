@@ -17,9 +17,9 @@ const isOpenSidebar = ref(false)
       <div class="icon-close icon" @click="isOpenSidebar = false">
         <FontAwesomeIcon :icon="faXmark" size="2x" />
       </div>
-      <SidebarMenu />
+      <SidebarMenu @onChangePage="isOpenSidebar = false" />
     </div>
-    <div class="right" :class="[isOpenSidebar && 'active']">
+    <div class="right container" :class="[isOpenSidebar && 'active']">
       <RouterView />
     </div>
   </div>

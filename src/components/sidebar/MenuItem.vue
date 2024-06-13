@@ -3,6 +3,7 @@ import { RouterLink } from 'vue-router'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import { ref } from 'vue'
+const emit = defineEmits(['onChangePage'])
 
 const props = defineProps({
   item: {
@@ -22,14 +23,20 @@ const isOpenSubMenu = ref(false)
       </div>
       <div class="text">{{ props.item.text }}</div>
     </div>
-    <RouterLink class="item" :to="props.item.link" v-else>
+    <RouterLink class="item" :to="props.item.link" @click="emit('onChangePage')" v-else>
       <div class="icon" v-if="item.icon">
         <FontAwesomeIcon :icon="props.item.icon" size="xl" />
       </div>
       <div class="text">{{ props.item.text }}</div>
     </RouterLink>
     <div class="sub-menu" v-show="isOpenSubMenu" v-if="item.dropdown">
-      <RouterLink class="item" v-for="_item in item.dropdown" :key="_item.text" :to="_item.link">
+      <RouterLink
+        class="item"
+        v-for="_item in item.dropdown"
+        :key="_item.text"
+        :to="_item.link"
+        @click="emit('onChangePage')"
+      >
         <div class="icon" v-if="item.icon">
           <FontAwesomeIcon :icon="_item.icon" size="xl" />
         </div>

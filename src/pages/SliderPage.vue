@@ -55,38 +55,46 @@ const dataSrcImageBG = reactive([
   },
   {
     src: imageBg.img5
+  },
+  {
+    src: imageBg.img6
+  },
+  {
+    src: imageBg.img7
+  },
+  {
+    src: imageBg.img8
+  },
+  {
+    src: imageBg.img9
+  },
+  {
+    src: imageBg.img10
   }
-  // {
-  //   src: imageBg.img6
-  // },
-  // {
-  //   src: imageBg.img7
-  // },
-  // {
-  //   src: imageBg.img8
-  // },
-  // {
-  //   src: imageBg.img9
-  // },
-  // {
-  //   src: imageBg.img10
-  // }
 ])
 </script>
 
 <template>
-  <div class="container">
-    <!-- <SectionComponent title="Auto slider">
+  <divi>
+    <SectionComponent title="Auto slider">
       <SliderAuto :dataSrc="dataSrcImage" />
       <SliderAuto2 :dataSrc="dataSrcImage" class="mt-24" />
-    </SectionComponent> -->
-    <SectionComponent title="Carousel infinity" class="mt-24">
-      <CarouselInfinity :dataSrc="dataSrcImageBG" />
     </SectionComponent>
-  </div>
+    <SectionComponent title="Carousel infinity" class="mt-24">
+      <CarouselInfinity :dataSrc="dataSrcImageBG" v-slot="{ item }" :gap="0">
+        <img :src="item.src" alt="" />
+      </CarouselInfinity>
+    </SectionComponent>
+  </divi>
 </template>
 
 <style scoped lang="scss">
+img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center center;
+}
 .slider-page {
   padding-top: 50px;
 }
