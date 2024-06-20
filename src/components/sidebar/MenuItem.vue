@@ -11,7 +11,7 @@ const props = defineProps({
     default: ''
   }
 })
-const isOpenSubMenu = ref(false)
+const isOpenSubMenu = ref(true)
 </script>
 
 <template>
@@ -23,7 +23,7 @@ const isOpenSubMenu = ref(false)
       </div>
       <div class="text">{{ props.item.text }}</div>
     </div>
-    <RouterLink class="item" :to="props.item.link" @click="emit('onChangePage')" v-else>
+    <RouterLink class="item" :to="`/${props.item.path}`" @click="emit('onChangePage')" v-else>
       <div class="icon" v-if="item.icon">
         <FontAwesomeIcon :icon="props.item.icon" size="xl" />
       </div>
@@ -34,7 +34,7 @@ const isOpenSubMenu = ref(false)
         class="item"
         v-for="_item in item.dropdown"
         :key="_item.text"
-        :to="_item.link"
+        :to="`/${item.path}/${_item.path}`"
         @click="emit('onChangePage')"
       >
         <div class="icon" v-if="item.icon">

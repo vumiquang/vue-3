@@ -1,49 +1,10 @@
 <script setup>
 import MenuItem from './MenuItem.vue'
-import { faHome } from '@fortawesome/free-solid-svg-icons'
 const emit = defineEmits(['onChangePage'])
-import { reactive } from 'vue'
+import { ref } from 'vue'
+import { pageConfig } from '@/configs/page-config'
 
-const menu = reactive([
-  {
-    text: 'Home',
-    icon: faHome,
-    link: '/'
-  },
-  {
-    text: 'Vue core',
-    icon: faHome,
-    dropdown: [
-      {
-        text: 'Custom Directive',
-        icon: faHome,
-        link: '/directive-custom'
-      }
-    ]
-  },
-  {
-    text: 'Slider',
-    icon: faHome,
-    dropdown: [
-      {
-        text: 'Auto slider',
-        icon: faHome,
-        link: '/slider-auto'
-      }
-    ]
-  },
-  {
-    text: 'Mouse Effect',
-    icon: faHome,
-    dropdown: [
-      {
-        text: 'Mouse hover',
-        icon: faHome,
-        link: '/mouse-hover'
-      }
-    ]
-  }
-])
+const menu = ref(pageConfig)
 </script>
 
 <template>
