@@ -11,6 +11,17 @@ const menu = reactive([
     link: '/'
   },
   {
+    text: 'Vue core',
+    icon: faHome,
+    dropdown: [
+      {
+        text: 'Custom Directive',
+        icon: faHome,
+        link: '/directive-custom'
+      }
+    ]
+  },
+  {
     text: 'Slider',
     icon: faHome,
     dropdown: [
