@@ -2,7 +2,8 @@ import HomePage from '@/pages/HomePage.vue'
 import DirectiveCustomPage from '@/pages/DirectiveCustomPage.vue'
 import SliderPage from '@/pages/SliderPage.vue'
 import MouseHoverPage from '@/pages/MouseHoverPage.vue'
-
+import KeepAlivePage from '@/pages/KeepAlivePage.vue'
+import TransitionPage from '@/pages/TransitionPage.vue'
 
 export const pageConfig = [
   {
@@ -18,6 +19,16 @@ export const pageConfig = [
         text: 'Custom directive',
         path: 'custom-directive',
         component: DirectiveCustomPage
+      },
+      {
+        text: 'Transition',
+        path: 'transition',
+        component: TransitionPage
+      },
+      {
+        text: 'KeepAlive',
+        path: 'keep-alive',
+        component: KeepAlivePage
       }
     ]
   },

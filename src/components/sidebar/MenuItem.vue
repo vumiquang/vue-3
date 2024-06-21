@@ -80,7 +80,7 @@ const isOpenSubMenu = ref(true)
     }
   }
   .sub-menu .item {
-    padding-left: 25px;
+    padding-left: 35px;
   }
 }
 </style>

@@ -1,25 +1,14 @@
 <script setup>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 import SidebarMenu from '@/components/sidebar/SidebarMenu.vue'
 import { RouterView } from 'vue-router'
-import { ref } from 'vue'
-
-const isOpenSidebar = ref(false)
 </script>
 
 <template>
   <div class="main-layout">
-    <div class="icon-bar icon" :class="[!isOpenSidebar && 'active']" @click="isOpenSidebar = true">
-      <FontAwesomeIcon :icon="faBars" size="2x" />
+    <div class="left">
+      <SidebarMenu />
     </div>
-    <div class="left" :class="[isOpenSidebar && 'active']">
-      <div class="icon-close icon" @click="isOpenSidebar = false">
-        <FontAwesomeIcon :icon="faXmark" size="2x" />
-      </div>
-      <SidebarMenu @onChangePage="isOpenSidebar = false" />
-    </div>
-    <div class="right container" :class="[isOpenSidebar && 'active']">
+    <div class="right container">
       <RouterView />
     </div>
   </div>
@@ -29,10 +18,7 @@ const isOpenSidebar = ref(false)
 .main-layout {
   display: flex;
   .left {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
+    width: 270px;
     height: 100vh;
     overflow: auto;
     box-shadow: -2px 3px 9px 1px rgba(0, 0, 0, 0.5);
@@ -40,17 +26,12 @@ const isOpenSidebar = ref(false)
     transition: all 0.3s;
     z-index: 999;
     background: white;
-    transform: translateX(-100%);
-    &.active {
-      transform: translateX(0px);
-    }
   }
   .right {
-    width: 100%;
+    width: calc(100% - 270px);
     transition: all 0.3s;
     &.active {
       margin-left: 250px;
-      width: calc(100% - 250px);
     }
   }
   .icon {
